@@ -162,8 +162,8 @@ class Season:
         # decide which player stay in the team
         fix_index = [random.randint(0, 1) for _ in range(len(self.teams))]
 
-        fixed_players  = [team.players[fix_index[i]]     for i, team in enumerate(self.teams)]
-        switch_players = [team.players[1 - fix_index[i]] for i, team in enumerate(self.teams)]
+        fixed_players  = [team.players[1 - fix_index[i]]     for i, team in enumerate(self.teams)]
+        switch_players = [team.players[fix_index[i]] for i, team in enumerate(self.teams)]
 
         # do the player switch operation
         switched_players = [switch_players[n - n_member_switch] for n in range(len(switch_players))]
