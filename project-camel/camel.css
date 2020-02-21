@@ -1,0 +1,39 @@
+g.c3-texts {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.chart-holder {
+    width: 800px;
+    height: 420px;
+}
+
+.player-data {
+    width: 400px;
+    height: 200px;
+    margin-top: 100px;
+}
+
+.button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    transition: all 0.15s ease-in-out;
+}
+
+.button:hover {
+    background: #66bb6a;
+}
+
+.download.button:hover {
+    background: #42a5f5;
+}
+
+.export-image {
+    display: none;
+}
+
+*:focus {
+    outline: none;
+}

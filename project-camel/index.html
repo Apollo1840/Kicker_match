@@ -1,0 +1,39 @@
+<html>
+<header>
+    <link href="./c3.min.css" rel="stylesheet">
+    <link href="./camel.css" rel="stylesheet">
+    <script src="./d3.v5.min.js"></script>
+    <script src="./c3.min.js"></script>
+</header>
+<body>
+    <div id="chart" class="chart-holder"></div>
+    <canvas id="export-img" class="export-image"></canvas>
+    <div>
+        <textarea id="input" class="player-data">
+            {"Fatih": 30,
+             "Christian": 8,
+             "Pavle": 21,
+             "Ganesh": 10,
+             "Ömür": 21,
+             "Aurélien": 27,
+             "Congyu": 20,
+             "Andrey": 15,
+             "Zak": 20,
+             "Marco": 30}
+        </textarea>
+    </div>
+
+    <div>
+        <button class="generate button"
+                onclick="generate()">
+            Regenerate Graph
+        </button>
+        <button class="download button"
+                onclick="download()">
+            Download
+        </button>
+    </div>
+
+    <script src="./graph.js"></script>
+</body>
+</html>
