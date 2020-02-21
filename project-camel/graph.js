@@ -5,6 +5,7 @@ function download() {
     const canvas = document.getElementById("export-img");
     svg.setAttribute("width", 800);
     svg.setAttribute("height", 420);
+    svg.style = "background: #ffffff";
     canvas.width = 800;
     canvas.height = 420;
     const data = new XMLSerializer().serializeToString(svg);
@@ -20,7 +21,7 @@ function download() {
         document.body.appendChild(element);
         element.style = "display: none";
         element.href = uri;
-        element.download = "staging.png";
+        element.download = "stage.png";
         element.click();
         window.URL.revokeObjectURL(uri);
         document.body.removeChild(element);
@@ -29,10 +30,16 @@ function download() {
 }
 
 function generate() {
-    const players = JSON.parse(document.getElementById("input").value.trim().replace(/"/g, "\"").replace(/\s/g, ""));
+    const players = JSON.parse(document.getElementById("input").value.trim().replace(/'/g, "\"").replace(/\s/g, ""));
 
     const playersSorted = Object.keys(players).sort((a, b) => {
-        return players[a] > players[b] ? -1 : 1;
+        if (players[a] > players[b]) {
+            return -1
+        } else if (players[a] === players[b]) {
+            return Math.random() > Math.random() ? -1:1;
+        }
+
+        return 1;
     });
     const resultArray = playersSorted.map(name => players[name]);
 
